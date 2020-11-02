@@ -135,5 +135,31 @@ namespace InclusivenessAnalyzer.Test
             var expected = VerifyCS.Diagnostic("InclusivenessAnalyzer").WithLocation(13, 27).WithArguments("BlackListValue", "DenyList");
             await VerifyCS.VerifyAnalyzerAsync(test, expected);
         }
+
+        [TestMethod]
+        public async Task BlacklistCommentTest()
+        {
+            var test = @"
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Diagnostics;
+
+    namespace ConsoleApplication1
+    {
+        /// <summary>
+        /// blacklist here
+        /// </summary>
+        class Program
+        {   
+            public string ListValue;
+        }
+    }";
+
+            var expected = VerifyCS.Diagnostic("InclusivenessAnalyzer").WithLocation(11, 12).WithArguments("BlackList", "DenyList");
+            await VerifyCS.VerifyAnalyzerAsync(test, expected);
+        }
     }
 }

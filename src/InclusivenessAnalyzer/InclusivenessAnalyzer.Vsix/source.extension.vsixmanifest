@@ -2,8 +2,8 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
     <Identity Id="InclusivenessAnalyzer.ffba56db-e5a3-4c87-af0e-059806d43edd" Version="1.0" Language="en-US" Publisher="meferna"/>
-    <DisplayName>InclusivenessAnalyzer</DisplayName>
-    <Description xml:space="preserve">This is a sample diagnostic extension for the .NET Compiler Platform ("Roslyn").</Description>
+    <DisplayName>Inclusiveness Analyzer</DisplayName>
+    <Description xml:space="preserve">This analyzer checks your code for non-inclusive words and suggests alternate words that are inclusive.</Description>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0,)" />

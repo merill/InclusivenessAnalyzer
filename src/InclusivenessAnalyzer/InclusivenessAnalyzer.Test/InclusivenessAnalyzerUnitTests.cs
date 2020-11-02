@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 using VerifyCS = InclusivenessAnalyzer.Test.CSharpCodeFixVerifier<
-    InclusivenessAnalyzer.InclusivenessAnalyzerAnalyzer,
+    InclusivenessAnalyzer.InclusivenessAnalyzer,
     InclusivenessAnalyzer.InclusivenessAnalyzerCodeFixProvider>;
 
 namespace InclusivenessAnalyzer.Test
@@ -11,7 +11,7 @@ namespace InclusivenessAnalyzer.Test
     {
         //No diagnostics expected to show up
         [TestMethod]
-        public async Task TestMethod1()
+        public async Task EmptyTest()
         {
             var test = @"";
 
@@ -20,7 +20,7 @@ namespace InclusivenessAnalyzer.Test
 
         //Diagnostic and CodeFix both triggered and checked for
         [TestMethod]
-        public async Task TestMethod2()
+        public async Task WhitelistTest()
         {
             var test = @"
     using System;
@@ -32,7 +32,7 @@ namespace InclusivenessAnalyzer.Test
 
     namespace ConsoleApplication1
     {
-        class {|#0:TypeName|}
+        class {|#0:WhiteList|}
         {   
         }
     }";
@@ -47,13 +47,13 @@ namespace InclusivenessAnalyzer.Test
 
     namespace ConsoleApplication1
     {
-        class TYPENAME
+        class AllowList
         {   
         }
     }";
 
-            var expected = VerifyCS.Diagnostic("InclusivenessAnalyzer").WithLocation(0).WithArguments("TypeName");
-            await VerifyCS.VerifyCodeFixAsync(test, expected, fixtest);
+            var expected = VerifyCS.Diagnostic("InclusivenessAnalyzer").WithLocation(0).WithArguments("WhiteList");
+            await VerifyCS.VerifyAnalyzerAsync(test, expected);
         }
     }
 }

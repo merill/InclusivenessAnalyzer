@@ -14,8 +14,10 @@ namespace InclusivenessAnalyzer
     {
         public const string DiagnosticId = "Inclusive";
         private static readonly Dictionary<string, string> InclusiveTerms = new Dictionary<string, string>() {
-            {"whitelist", "allowlist, accesslist, permit" },
-            {"blacklist", "denylist, blocklist, exclude list" },
+            {"whitelist", "allow list, access list, permit" },
+            {"white list", "allow list, access list, permit" },
+            {"blacklist", "deny list, blocklist, exclude list" },
+            {"black list", "deny list, blocklist, exclude list" },
             {"culture fit", "values fit, cultural combtribution" },
             {"master", "primary, main, default, leader" },
             {"slave", "replica, standby, secondary, follower" },

@@ -3,7 +3,7 @@
   <Metadata>
     <Identity Id="InclusivenessAnalyzer.ffba56db-e5a3-4c87-af0e-059806d43edd" Version="1.0" Language="en-US" Publisher="meferna"/>
     <DisplayName>Inclusiveness Analyzer</DisplayName>
-    <Description xml:space="preserve">This analyzer checks your code for non-inclusive words and suggests alternate words that are inclusive.</Description>
+    <Description xml:space="preserve">This Roslyn analyzer checks your code for non-inclusive words and suggests alternate words that are inclusive.</Description>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0,)" />

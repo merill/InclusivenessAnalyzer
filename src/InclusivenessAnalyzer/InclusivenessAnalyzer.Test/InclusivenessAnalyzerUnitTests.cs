@@ -10,6 +10,7 @@ namespace InclusivenessAnalyzer.Test
     [TestClass]
     public class InclusivenessAnalyzerUnitTest
     {
+
         //No diagnostics expected to show up
         [TestMethod]
         public async Task EmptyTest()
@@ -38,7 +39,7 @@ namespace InclusivenessAnalyzer.Test
         }
     }";  
 
-            var expected = VerifyCS.Diagnostic("InclusivenessAnalyzer").WithLocation(11,15).WithArguments("WhiteList", "AllowList");
+            var expected = VerifyCS.Diagnostic(InclusivenessAnalyzer.DiagnosticId).WithLocation(11,15).WithArguments("WhiteList", "allow list, access list, permit");
             await VerifyCS.VerifyAnalyzerAsync(test, expected);
         }
 
@@ -61,7 +62,7 @@ namespace InclusivenessAnalyzer.Test
         }
     }";
 
-            var expected = VerifyCS.Diagnostic("InclusivenessAnalyzer").WithLocation(13, 25).WithArguments("WhiteList", "AllowList");
+            var expected = VerifyCS.Diagnostic(InclusivenessAnalyzer.DiagnosticId).WithLocation(13, 25).WithArguments("WhiteList", "allow list, access list, permit");
             await VerifyCS.VerifyAnalyzerAsync(test, expected);
         }
 
@@ -84,7 +85,7 @@ namespace InclusivenessAnalyzer.Test
         }
     }";
 
-            var expected = VerifyCS.Diagnostic("InclusivenessAnalyzer").WithLocation(13, 39).WithArguments("whiteList", "AllowList");
+            var expected = VerifyCS.Diagnostic(InclusivenessAnalyzer.DiagnosticId).WithLocation(13, 39).WithArguments("whiteList", "allow list, access list, permit");
             await VerifyCS.VerifyAnalyzerAsync(test, expected);
         }
 
@@ -107,9 +108,9 @@ namespace InclusivenessAnalyzer.Test
         }
     }";
 
-            var expected1 = VerifyCS.Diagnostic("InclusivenessAnalyzer").WithLocation(13, 24).WithArguments("BlacklistNumber", "DenyList");
-            var expected2 = VerifyCS.Diagnostic("InclusivenessAnalyzer").WithLocation(13, 42).WithArguments("get_BlacklistNumber", "DenyList");
-            var expected3 = VerifyCS.Diagnostic("InclusivenessAnalyzer").WithLocation(13, 47).WithArguments("set_BlacklistNumber", "DenyList");
+            var expected1 = VerifyCS.Diagnostic(InclusivenessAnalyzer.DiagnosticId).WithLocation(13, 24).WithArguments("BlacklistNumber", "deny list, blocklist, exclude list");
+            var expected2 = VerifyCS.Diagnostic(InclusivenessAnalyzer.DiagnosticId).WithLocation(13, 42).WithArguments("get_BlacklistNumber", "deny list, blocklist, exclude list");
+            var expected3 = VerifyCS.Diagnostic(InclusivenessAnalyzer.DiagnosticId).WithLocation(13, 47).WithArguments("set_BlacklistNumber", "deny list, blocklist, exclude list");
             await VerifyCS.VerifyAnalyzerAsync(test, expected1, expected2, expected3);
         }
 
@@ -132,7 +133,7 @@ namespace InclusivenessAnalyzer.Test
         }
     }";
 
-            var expected = VerifyCS.Diagnostic("InclusivenessAnalyzer").WithLocation(13, 27).WithArguments("BlackListValue", "DenyList");
+            var expected = VerifyCS.Diagnostic("Inclusive").WithLocation(13, 27).WithArguments("BlackListValue", "deny list, blocklist, exclude list");
             await VerifyCS.VerifyAnalyzerAsync(test, expected);
         }
 
@@ -158,7 +159,7 @@ namespace InclusivenessAnalyzer.Test
         }
     }";
 
-            var expected = VerifyCS.Diagnostic("InclusivenessAnalyzer").WithLocation(11, 12).WithArguments("BlackList", "DenyList");
+            var expected = VerifyCS.Diagnostic(InclusivenessAnalyzer.DiagnosticId).WithLocation(11, 12).WithArguments("blacklist", "deny list, blocklist, exclude list");
             await VerifyCS.VerifyAnalyzerAsync(test, expected);
         }
     }

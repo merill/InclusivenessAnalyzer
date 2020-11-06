@@ -118,7 +118,7 @@ namespace InclusivenessAnalyzer
                 // Find just those named type symbols with non-inclusive terms.
                 foreach (KeyValuePair<string, string> entry in InclusiveTerms)
                 {
-                    if (symbol.Name.IndexOf(entry.Key, StringComparison.InvariantCultureIgnoreCase) >= 0)
+                    if (IsMatch(symbol.Name, entry.Key))
                     {
                         // For all such symbols, produce a diagnostic.
                         var diagnostic = Diagnostic.Create(Rule, symbol.Locations[0], symbol.Name, entry.Value);
@@ -129,6 +129,21 @@ namespace InclusivenessAnalyzer
                 }
             }
             catch { }
+        }
+
+        /// <summary>
+        /// Checks if term was found in the symbol.
+        /// Match whole word if it has less than 5 characters
+        /// </summary>
+        /// <param name="symbol">The phrase that is being checked.</param>
+        /// <param name="term">The non-inclusive phrase we are looking for.</param>
+        /// <returns></returns>
+        private static bool IsMatch(string symbol, string term)
+        {
+            return term.Length < 5 ?
+                symbol.Equals(term, StringComparison.InvariantCultureIgnoreCase) :
+                symbol.IndexOf(term, StringComparison.InvariantCultureIgnoreCase) >= 0;
+            
         }
 
         private void CheckComments(SyntaxNodeAnalysisContext context)
@@ -147,7 +162,7 @@ namespace InclusivenessAnalyzer
                 var content = xmlTrivia.ToFullString();
                 foreach (KeyValuePair<string, string> entry in InclusiveTerms)
                 {
-                    if (content.IndexOf(entry.Key, StringComparison.InvariantCultureIgnoreCase) >= 0)
+                    if (IsMatch(content, entry.Key))
                     {
                         // For all such symbols, produce a diagnostic.
                         var diagnostic = Diagnostic.Create(Rule, xmlTrivia.GetLocation(), entry.Key, entry.Value);

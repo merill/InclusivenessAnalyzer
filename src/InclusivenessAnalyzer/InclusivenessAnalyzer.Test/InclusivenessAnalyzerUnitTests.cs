@@ -20,6 +20,23 @@ namespace InclusivenessAnalyzer.Test
             await VerifyCS.VerifyAnalyzerAsync(test);
         }
 
+        [TestMethod]
+        public async Task ShortWordTest()
+        {
+            var test = @"class check {}";
+
+            await VerifyCS.VerifyAnalyzerAsync(test);
+        }
+
+        [TestMethod]
+        public async Task ShortWordHeTest()
+        {
+            var test = @"class he {}";
+
+            var expected = VerifyCS.Diagnostic(InclusivenessAnalyzer.DiagnosticId).WithLocation(1, 7).WithArguments("he", "they");
+            await VerifyCS.VerifyAnalyzerAsync(test, expected);
+        }
+
         //Diagnostic and CodeFix both triggered and checked for
         [TestMethod]
         public async Task WhitelistTypeNameTest()

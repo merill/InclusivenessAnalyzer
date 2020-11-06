@@ -41,17 +41,17 @@
 - white box, white-box <br>
 **Alternative**: open-box <br>
 **Category**: Diversity <br>
-**Context**: "Open box" provides a more practical description and illustration of this software testing discipline as well as an intentional departure from the racial connotations of "white box" and "black box" terminology. It decouples the exclusive and advanced knowledge characterized by testers from the term "white" <br>
+**Context**: "Open box" provides a more practical description and illustration of this software testing discipline as well as an intentional departure from the racial connotations of "white box" and "black box" terminology. It decouples the exclusive and advanced knowledge characterized by testers from the term "white". <br>
 **Link**: https://en.wikipedia.org/wiki/White-box_testing <br>
 
 - black box, black-box <br>
 **Alternative**: closed-box <br>
 **Category**: Diversity <br>
-**Context**: "Closed box" provides a more practical description and illustration of this software testing discipline as well as an intentional departure from the racial connotations of "white box" and "black box" terminology. It decouples the lack of knowledge of the system characterized by testers from the term "black"  <br>
+**Context**: "Closed box" provides a more practical description and illustration of this software testing discipline as well as an intentional departure from the racial connotations of "white box" and "black box" terminology. It decouples the lack of knowledge of the system characterized by testers from the term "black".  <br>
 **Link**: https://en.wikipedia.org/wiki/Black-box_testing <br>
 
 - culture fit <br>
-**Alternative**: values fit, cultural combtribution <br>
+**Alternative**: values fit, cultural contribution <br>
 **Category**: Inclusion <br>
 **Context**: Avoid terms and practices that can lead to strict conformance to a dominant and accepted culture. Culture fit is used to support an improper or discriminatory motivation aimed at prejudicing those in a, or several, protected classes. <br>
 **Link**: https://buffer.com/resources/culture-fit/ <br>
@@ -238,7 +238,7 @@ https://content-guide.18f.gov/our-style/inclusive-language/ <br>
 - blind spot <br>
 **Alternative**: dead spot, unseen area <br>
 **Category**: Accessibility <br>
-**Context**: Be aware that "blind spot" has a negative connotation with lack of wisdom or inability to exercise judgment. It may cause offense to those that have hearing loss or impairment. <br>
+**Context**: Be aware that "blind spot" has a negative connotation with lack of wisdom or inability to exercise judgment. It may cause offense to those that have loss of sight or impairment. <br>
 **Link**: https://content-guide.18f.gov/our-style/inclusive-language/ <br>
 
 - OCD <br>

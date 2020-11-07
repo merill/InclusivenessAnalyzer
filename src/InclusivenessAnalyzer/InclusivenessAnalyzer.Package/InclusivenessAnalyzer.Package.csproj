@@ -9,7 +9,7 @@
 
   <PropertyGroup>
     <PackageId>InclusivenessAnalyzer</PackageId>
-    <PackageVersion>1.1.0.0</PackageVersion>
+    <PackageVersion>1.2.0.0</PackageVersion>
     <Authors>Sana, Jo, Bliss, Merill</Authors>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/merill/InclusivenessAnalyzer</PackageProjectUrl>

@@ -28,7 +28,7 @@ namespace InclusivenessAnalyzer
             {"white-box", "open-box" },
             {"black box", "closed-box" },
             {"black-box", "closed-box" },
-            {"culture fit", "values fit, cultural combtribution" },
+            {"culture fit", "values fit, cultural contribution" },
             {"citizen", "resident, people" },
             {"guys", "folks, you all, y'all, people, teammates, team" },
             {"he", "they" },

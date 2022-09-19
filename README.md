@@ -1,5 +1,10 @@
 # Inclusiveness Analyzer
 
+THIS REPOSITORY HAS BEEN ARCHIVED.
+
+Please see [https://github.com/microsoft/InclusivenessAnalyzerVisualStudio](https://github.com/microsoft/InclusivenessAnalyzerVisualStudio)
+--------------------
+
 > Make your code inclusive!
 
 The Inclusiveness Analyzer is a Visual Studio extension that checks code for offensive / exclusive terms.

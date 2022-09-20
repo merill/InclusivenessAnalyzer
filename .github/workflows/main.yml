@@ -27,16 +27,3 @@ jobs:
 
       - name: Inclusiveness Analyzer
         uses: microsoft/InclusivenessAnalyzer@v0.1.4-beta
-        with:
-          # Who to greet
-          who-to-greet: Merill
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
